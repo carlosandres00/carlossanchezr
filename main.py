@@ -50,4 +50,25 @@ pp=int(input("cuantos payasos quieres pedir: "))
 pm=int(input("cuantas muñecas quieres pedir: "))
 formula= (pp*112)+(pm*75)
 print("el peso total del paquete es", formula,"g")
+
+#ejercicio 11
+
+inversion= float(input("introduce la inversion inicial: "))
+intereses= 0.04
+balance1= inversion * (1+intereses)
+print("balance tras el primer año: " + str(round(balance1, 2)))
+balance2= balance1 * (1+intereses)
+print("balance tras el segundfo año: " + str(round(balance2,2)))
+balance3= balance2* (1+intereses)
+print("balance tras el tercer año: " + str(round(balance3,2)))
+
+#ejercicio 12
+
+pan= int(input("introduce el numero de panes vendidos que no son frescos: "))
+precio= 3000
+descuento= 0.4
+costo= pan * precio * (1-descuento)
+print("el costo de un pan fresco es: " + str(precio) + "$")
+print("el descuento sobre un pan no fresco es: " + str(descuento*100) + "%")
+print("el costo final a pagar es: " + str(round(costo,2)) + "$")
 """
