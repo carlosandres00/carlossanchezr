@@ -71,4 +71,27 @@ costo= pan * precio * (1-descuento)
 print("el costo de un pan fresco es: " + str(precio) + "$")
 print("el descuento sobre un pan no fresco es: " + str(descuento*100) + "%")
 print("el costo final a pagar es: " + str(round(costo,2)) + "$")
+
+#segundo python
+
+#ejercicio 1
+print("introduce un numero entero: ")
+N=int(input())
+S=((N*(N+1)/2))
+if S > 20:print(S, "es un gran numero! ")
+else: print("la suma de todos los enteros desde 1 hasta",N, "es",S,"asi que NO es un gran numero")
+
+#ejercicio 2
+
+print("escriba un numero entero: ")
+N = int(input())
+print("escriba otro numero entero")
+M = int(input())
+C = (N / M)
+R = (N * M)
+print("el cociente es", C)
+print("el residuo es", R)
+if C < 1: print("el divisor es mayor al dividendo")
+if C > 1: print("el divisor es menor que el dividendo")
+if C == 1: print("el divisor y el dividendo son iguales")
 """
