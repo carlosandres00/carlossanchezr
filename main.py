@@ -10,7 +10,6 @@ print(computador)
 #ejercicio 3
 name=input("¿Cual es tu nombre ")
 print (" Hola " + name + " es un placer! ")
-
 #ejercicio 4
 print (((3+2)/(2*5))**2)
 
@@ -94,4 +93,24 @@ print("el residuo es", R)
 if C < 1: print("el divisor es mayor al dividendo")
 if C > 1: print("el divisor es menor que el dividendo")
 if C == 1: print("el divisor y el dividendo son iguales")
+
+#ejercicio 3
+print("ingrese la cantidad que desea invertir ")
+c=float(input())
+print("ingrese el interes anual ")
+i=float(input())
+print("ingrese el numero de años: ")
+a=float(input())
+cap=(c*(i/100)**a)
+if cap<100000: print("la inversion de", c, "tiene baja rentabilidad")
+if cap>100000 and cap<1000000: print("la inversion de ", c , "tiene una rentabilidad moderada")
+if cap>1000000: ("la inversion de ", c, "es una buena inversion")
 """
+#ejercicio 4
+
+
+
+
+
+
+    
