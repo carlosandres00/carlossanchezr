@@ -169,7 +169,7 @@ a=int(input())
 print("escribe otro numero ")
 b=int(input())
 division (a,b)
-"""
+
 #ejercicio 5
 
 def suma(a,b):
@@ -210,3 +210,84 @@ elif opcion=="4":
 else:
   print("opcion invalida. Por favor ingrese una operacion valida.")
   
+#ejercicio 6
+def intereses(inv):
+  d= inv
+  if (d>0 and d<1000000):
+   return 2
+  elif(d>=1000000 and d<2000000):
+   return 5
+  else:
+   return 7
+   
+def calBalance(int, inv):
+  n=int
+  d=inv
+  return round((d*(1+(n/100))),2 )
+
+def ctaAhorro():
+  #inversion, interes, b1,b2,b3 =0.0
+  inversion=float(input("ingrese el valor de la inversion: "))
+  interes=intereses(inversion)
+  b1=calBalance(interes, inversion)
+  b2=calBalance(interes,b1)
+  b3=calBalance(interes, b2)
+  print("balance año 1: " + str(b1) + "balance año 2: " + str(b2) + "balance año 3: " + str(b3))
+  
+ctaAhorro()
+"""
+#cuarto python
+
+#ejercicio 1
+def areatriangulo(b,a):
+  return(b*a)/2
+
+def areacuadrado(bc,ac):
+  return bc*ac
+
+def areacirculo(r):
+  return(3.14169*(r**2))
+
+def areafig():
+
+ area=0.0
+ figura=""
+ figura = input("escriba la figura a la que se le desea calcular el area: ") 
+ figura.lower()
+
+ if (figura.lower()=="triangulo"):
+   base=0.0
+   altura=0.0
+   base= float(input("ingrese la base: "))
+   altura=float(input("ingrese la altura: "))
+   area=areatriangulo(base,altura)
+   print("el area del triangulo es: ", area)
+
+  else (figura.lower()=="cuadrado"):        
+  base=0.0
+  area=0.0
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
