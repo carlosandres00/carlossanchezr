@@ -263,14 +263,17 @@ def areafig():
    area=areatriangulo(base,altura)
    print("el area del triangulo es: ", area)
 
-  else (figura.lower()=="cuadrado"):        
+  elif (figura.lower()=="cuadrado"):        
   base=0.0
   area=0.0
-  
+  base=float(input("ingrese la base: "))
+  area=float(input("ingrese el area: "))
+  print("el area del cuadrado es: ", area)
 
-
-
-
+else (figura.lower()=="circulo"):
+pi=3.14169
+area=0.0
+area=float
 
 
 
