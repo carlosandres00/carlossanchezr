@@ -235,7 +235,7 @@ def ctaAhorro():
   print("balance año 1: " + str(b1) + "balance año 2: " + str(b2) + "balance año 3: " + str(b3))
   
 ctaAhorro()
-"""
+
 #cuarto python
 
 #ejercicio 1
@@ -275,18 +275,41 @@ pi=3.14169
 area=0.0
 area=float
 
+#ejercicio 3
 
+def maximo(a,b):
+  if a>b:
+    return a
+  else:
+    return b
 
+def minimo(a,b):
+ if a<b:
+  return a
+ else: 
+  return b
 
+#programa principal (mala practica)
+a=int(input("un numero: "))
+b=int(input("otro numero: "))
+print(maximo(a-3, minimo(a+2, b-5)))
+"""   
+#ejercicio 4
 
+preciosiniva=2000000
+marca= "NOSY"
+iva= 0.20
+if preciosiniva>= 2000000:
+  descuentoporcentaje=0.10
+  if marca == "NOSY":
+    descuentoporcentaje+=0.05
+  else:descuentoporcentaje=0
 
+descuento=preciosiniva*descuentoporcentaje
+preciocondescuento=preciosiniva-descuento
+precioconiva=preciocondescuento*(1+iva)
 
-
-
-
-
-
-
+print("el precio a pagar con iva incluido es: ", precioconiva)
 
 
 
