@@ -293,7 +293,7 @@ def minimo(a,b):
 a=int(input("un numero: "))
 b=int(input("otro numero: "))
 print(maximo(a-3, minimo(a+2, b-5)))
-"""   
+
 #ejercicio 4
 
 preciosiniva=2000000
@@ -310,6 +310,212 @@ preciocondescuento=preciosiniva-descuento
 precioconiva=preciocondescuento*(1+iva)
 
 print("el precio a pagar con iva incluido es: ", precioconiva)
+
+#taller 
+
+# ejercicio 1
+anio = int(input("Por favor, ingrese un año: "))
+if (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0):
+    print(f"{anio} es bisiesto.")
+else:
+    print(f"{anio} no es bisiesto.")
+  
+#ejercicio 2
+
+altura = float(input("Ingrese la altura del perro en centímetros: "))
+peso = float(input("Ingrese el peso del perro en kilogramos: "))
+
+if altura <= 30 and peso <= 15:
+    tamano = "pequeño"
+elif 30 < altura <= 40 and 15 < peso <= 25:
+    tamano = "mediano"
+elif 40 < altura <= 60 and 25 < peso <= 45:
+    tamano = "grande"
+else:
+    tamano = "desconocido"
+
+if tamano != "desconocido":
+    print(f"El perro mestizo es de tamaño {tamano}.")
+else:
+    print("No se puede determinar el tamaño del perro mestizo con los valores proporcionados.")
+
+
+#ejercicio 3
+
+def kelvin_a_celsius(temp_kelvin):
+    return temp_kelvin - 273.15
+
+
+def celsius_a_kelvin(temp_celsius):
+    return temp_celsius + 273.15
+
+
+def celsius_a_fahrenheit(temp_celsius):
+    return (temp_celsius * 9/5) + 32
+
+
+def fahrenheit_a_celsius(temp_fahrenheit):
+    return (temp_fahrenheit - 32) * 5/9
+
+
+def fahrenheit_a_kelvin(temp_fahrenheit):
+    temp_celsius = fahrenheit_a_celsius(temp_fahrenheit)
+    return celsius_a_kelvin(temp_celsius)
+
+
+def main():
+    print("Conversión de Temperaturas")
+    temp = float(input("Ingrese la temperatura: "))
+    escala_entrada = input("Escala de entrada (K/C/F): ").upper()
+    escala_salida = input("Escala de salida (K/C/F): ").upper()
+
+    if escala_entrada == escala_salida:
+        print("La temperatura no cambia.")
+        return
+
+    if escala_entrada == "K":
+        if escala_salida == "C":
+            temp_convertida = kelvin_a_celsius(temp)
+        elif escala_salida == "F":
+            temp_celsius = kelvin_a_celsius(temp)
+            temp_convertida = celsius_a_fahrenheit(temp_celsius)
+    elif escala_entrada == "C":
+        if escala_salida == "K":
+            temp_convertida = celsius_a_kelvin(temp)
+        elif escala_salida == "F":
+            temp_convertida = celsius_a_fahrenheit(temp)
+    elif escala_entrada == "F":
+        if escala_salida == "K":
+            temp_convertida = fahrenheit_a_kelvin(temp)
+        elif escala_salida == "C":
+            temp_convertida = fahrenheit_a_celsius(temp)
+
+    print(f"La temperatura convertida es: {temp_convertida:.2f} {escala_salida}")
+
+if __name__ == "__main__":
+    main(
+
+#ejercicio 4
+
+def calcular_costo_y_descuento(edad, grupo):
+    costo = 0
+    descuento = 0
+
+    if grupo == "niños":
+        costo = 25000
+        if 10 <= edad <= 13:
+            descuento = 0.15
+        elif edad > 17:
+            descuento = 0.08
+    elif grupo == "adultos":
+        costo = 35000
+        if 18 <= edad <= 30:
+            descuento = 0.11
+        elif edad > 30:
+            descuento = 0.09
+    elif grupo == "adulto mayor":
+        costo = 50000
+        if edad > 65:
+            descuento = 0.40
+
+    return costo, descuento
+
+def main():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+
+    if 10 <= edad <= 17:
+        grupo = "niños"
+    elif 18 <= edad <= 50:
+        grupo = "adultos"
+    else:
+        grupo = "adulto mayor"
+
+    costo, descuento = calcular_costo_y_descuento(edad, grupo)
+    costo_con_descuento = costo - (costo * descuento)
+    
+    print(f"Nombre del participante: {nombre}")
+    print(f"Grupo: {grupo}")
+    print(f"Costo del grupo: {costo}")
+    print(f"Descuento aplicado: {descuento * 100}%")
+    print(f"Valor por pagar con descuento: {costo_con_descuento} pesos")
+
+if __name__ == "__main__":
+    main()
+
+
+#ejercicio 5
+
+import math
+
+
+def calcular_volumen_cubo(lado):
+    return lado ** 3
+
+
+def calcular_volumen_cilindro(radio, altura):
+    return math.pi * (radio ** 2) * altura
+
+
+def calcular_volumen_esfera(radio):
+    return (4/3) * math.pi * (radio ** 3)
+
+
+def main():
+    print("Cálculo de Volumen de Recipientes")
+    tipo_recipiente = input("Seleccione el tipo de recipiente (cubo/cilindro/esfera): ").lower()
+
+    if tipo_recipiente == "cubo":
+        lado = float(input("Ingrese la longitud del lado del cubo: "))
+        volumen = calcular_volumen_cubo(lado)
+    elif tipo_recipiente == "cilindro":
+        radio = float(input("Ingrese el radio del cilindro: "))
+        altura = float(input("Ingrese la altura del cilindro: "))
+        volumen = calcular_volumen_cilindro(radio, altura)
+    elif tipo_recipiente == "esfera":
+        radio = float(input("Ingrese el radio de la esfera: "))
+        volumen = calcular_volumen_esfera(radio)
+    else:
+        print("Tipo de recipiente no válido.")
+        return
+
+    print(f"El volumen del {tipo_recipiente} es: {volumen:.2f} unidades cúbicas.")
+
+if __name__ == "__main__":
+    main()
+
+
+#ejercicio 6
+
+volumen_cubo_rubik = 167
+
+
+def calcular_cajas(cantidad_cubos, tipo_caja):
+    if tipo_caja == "pequeñas":
+        capacidad_caja = 5 * 1000  
+        capacidad_caja = 7 * 1000
+    elif tipo_caja == "grandes":
+        capacidad_caja = 10 * 1000
+    elif tipo_caja == "extragrandes":
+        capacidad_caja = 15 * 1000
+    else:
+        print("Tipo de caja no válido.")
+        return
+
+    cajas_necesarias = cantidad_cubos * volumen_cubo_rubik / capacidad_caja
+    return int(cajas_necesarias)  
+def main():
+    cantidad_cubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
+    tipo_caja = input("Ingrese el tipo de caja (pequeñas/medianas/grandes/extragrandes): ").lower()
+
+    cajas_necesarias = calcular_cajas(cantidad_cubos, tipo_caja)
+    
+    if cajas_necesarias is not None:
+        print(f"Se necesitan {cajas_necesarias} cajas {tipo_caja} para enviar {cantidad_cubos} cubos de Rubik.")
+
+if __name__ == "__main__":
+    main()
+""" 
 
 
 
